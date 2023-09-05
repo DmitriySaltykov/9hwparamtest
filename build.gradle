@@ -1,0 +1,29 @@
+plugins {
+    id 'java-library'
+}
+
+repositories {
+    mavenCentral()
+}
+compileJava {
+    options.encoding = 'UTF-8'
+}
+compileTestJava {
+    options.encoding = 'UTF-8'
+}
+
+group 'guru.qa'
+version '1.0'
+
+dependencies {
+    testImplementation (
+            'com.codeborne:selenide:6.16.0',
+            'org.junit.jupiter:junit-jupiter:5.9.3',
+            'com.github.javafaker:javafaker:1.0.2'
+
+    )
+}
+
+test {
+    useJUnitPlatform()
+}
