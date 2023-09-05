@@ -35,7 +35,7 @@ package test;
 
         @ParameterizedTest(name = "Youtube home page should have \"{0}\" categories.")
 
-               void YtHomePageTest (String testData) {
+               void ytHomePageTest (String testData) {
 
         open("https://www.youtube.com/");
         $(".style-scope ytd-guide-renderer").shouldHave(text(testData));
@@ -52,7 +52,7 @@ package test;
         "Academeg, Итак ....  Меня зовут Костик, и я имею свой субъективный взгляд на автомобили"
         })
         @ParameterizedTest(name = "Youtube chanel  \"{0}\" should have text \"{1}\" in descreption.")
-        void YtHomePageDiscreptionTest(String testData, String expectedResult) {
+        void ytHomePageDiscreptionTest(String testData, String expectedResult) {
 
         open("https://www.youtube.com/");
         $("#search-input #search").val(testData).pressEnter();
@@ -66,15 +66,15 @@ package test;
         @Tag("search")
         })
         @DisplayName("Проверка наличия табов странице канала")
-        static Stream<Arguments> YTJavaProvider() {
+        static Stream<Arguments> ytJavaProvider() {
         return Stream.of(
         Arguments.of("QA GURU", List.of("Главная", "Видео", "Плейлисты", "Сообщество")),
         Arguments.of("Academeg", List.of("Главная", "Видео", "Трансляции", "Плейлисты", "Сообщество"))
         );
         }
-        @MethodSource("YTJavaProvider")
+        @MethodSource("ytJavaProvider")
         @ParameterizedTest(name = "Youtube chanel  \\\"{0}\\\" should have link \\\"{1}\\\" on Links descreption.\"")
-        void YTJavaProvider(String java, List<String> characteristic) {
+        void ytJavaProvider(String java, List<String> characteristic) {
 
         open("https://www.youtube.com/");
 
